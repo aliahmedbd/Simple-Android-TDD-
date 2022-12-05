@@ -4,7 +4,7 @@ class Engine(
     val cc: Int,
     val horsePower: Int,
     var temperature: Int,
-    var isTurnedOn: Boolean
+    var isTurnedOn: Boolean = false
 ) {
     fun turnsOn(){
         isTurnedOn = true

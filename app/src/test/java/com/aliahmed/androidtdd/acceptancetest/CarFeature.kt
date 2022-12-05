@@ -6,13 +6,13 @@ import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import org.junit.Test
 
-class CarFeature  {
+class CarFeature {
 
     private val engine = Engine(2000, 189, 15, false)
     private val car = Car(6.0, engine)
 
     @Test
-    fun carIsLoosingFuelWhenItTurnsOn(){
+    fun carIsLoosingFuelWhenItTurnsOn() {
 
         car.turnOn()
 
@@ -20,7 +20,7 @@ class CarFeature  {
     }
 
     @Test
-    fun carIsTurningOnItsEngineAndIncreasesTheTemperature(){
+    fun carIsTurningOnItsEngineAndIncreasesTheTemperature() {
         car.turnOn()
 
         assertEquals(95, car.engine.temperature)

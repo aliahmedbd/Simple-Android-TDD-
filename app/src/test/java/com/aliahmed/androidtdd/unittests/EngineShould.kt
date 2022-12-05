@@ -4,15 +4,22 @@ import com.aliahmed.androidtdd.Engine
 import org.junit.Assert.*
 import org.junit.Test
 
-class EngineTest {
+class EngineShould {
 
-    private val engine = Engine(2000, 189, 15, false)
+    private val engine = Engine(cc = 2000, horsePower = 189, temperature = 15)
 
     @Test
     fun isEngineTurnedOn() {
         engine.turnsOn()
 
+        //I can use assertTrue here
         assertEquals(true, engine.isTurnedOn)
+    }
+
+    @Test
+    fun riseTheTemperatureWhenItTurnsOn(){
+        engine.turnsOn()
+
         assertEquals(95, engine.temperature)
     }
 

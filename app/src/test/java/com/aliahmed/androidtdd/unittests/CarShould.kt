@@ -2,36 +2,31 @@ package com.aliahmed.androidtdd.unittests
 
 import com.aliahmed.androidtdd.Car
 import com.aliahmed.androidtdd.Engine
+import com.nhaarman.mockitokotlin2.mock
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import org.junit.Test
+import com.nhaarman.mockitokotlin2.times
+import com.nhaarman.mockitokotlin2.verify
 
 class CarShould {
 
-    private val engine = Engine(2000, 189, 15, false)
+    val engine: Engine = mock()
     val car = Car(fuel = 5.0, engine)
 
     @Test
-    fun loosingFuelWhenTurnsOn(){
+    fun loosingFuelWhenTurnsOn() {
         car.turnOn()
 
         assertEquals(4.5, car.fuel)
     }
 
     @Test
-    fun increaseEngineTemperatureWhenTurnsOn(){
+    fun turnOnItsEngine() {
         car.turnOn()
 
-        assertEquals(95, car.engine.temperature)
+        verify(engine, times(1)).turnsOn()
     }
-
-    @Test
-    fun turnOnEngineTWhenTurnsOn(){
-        car.turnOn()
-
-        assertTrue(engine.isTurnedOn)
-    }
-
 
 
 }
