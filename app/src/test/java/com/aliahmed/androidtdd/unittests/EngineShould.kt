@@ -6,7 +6,7 @@ import org.junit.Test
 
 class EngineShould {
 
-    private val engine = Engine(cc = 2000, horsePower = 189, temperature = 15)
+    private val engine = Engine()
 
     @Test
     fun isEngineTurnedOn() {

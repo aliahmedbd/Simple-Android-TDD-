@@ -11,8 +11,8 @@ import com.nhaarman.mockitokotlin2.verify
 
 class CarShould {
 
-    val engine: Engine = mock()
-    val car = Car(fuel = 5.0, engine)
+    private val engine: Engine = mock()
+    private val car = Car(fuel = 5.0, engine)
 
     @Test
     fun loosingFuelWhenTurnsOn() {
